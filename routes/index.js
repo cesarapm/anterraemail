@@ -4,7 +4,7 @@ const router = Router();
 const nodemailer = require("nodemailer");
 
 router.post("/send-email", async (req, res) => {
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, message, metodo } = req.body;
 
   contentHTML = `
         <h1>User Information</h1>
@@ -12,6 +12,7 @@ router.post("/send-email", async (req, res) => {
             <li>Username: ${name}</li>
             <li>User Email: ${email}</li>
             <li>PhoneNumber: ${phone}</li>
+            <li>Metodo: ${metodo}</li>
         </ul>
         <p>${message}</p>
       
